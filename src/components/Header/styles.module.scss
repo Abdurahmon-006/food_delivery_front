@@ -1,0 +1,38 @@
+.header {
+  max-width: 2400px;
+  width: 100%;
+  position: fixed;
+  left: 280px;
+  top: 0;
+  z-index: 20;
+  font-family: Inter;
+  padding: 10px 285px 10px 5px;
+  border-bottom: 2px solid #E5E9EB;
+  background-color: #fff;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapperLeft {
+  display: flex;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.searchInput {
+  margin-right: 18px;
+}
+
+.btnAdd {
+  margin-left: 18px;
+}

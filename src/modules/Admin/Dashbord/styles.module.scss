@@ -1,0 +1,54 @@
+.dashbord {
+  font-family: 'Inter';
+  margin: 78px 0;
+}
+
+.list {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  background-color: white;
+  max-width: 263px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  padding: 36px 20px;
+  border: 1px solid #e5e9eb;
+  border-radius: 16px;
+}
+
+.item:not(:last-child) {
+  margin-right: 22px;
+}
+
+.wrapperText {
+  gap: 10px;
+  display: flex;
+  justify-content: space-between;
+  //   flex-direction: column;
+}
+
+.count {
+  display: block;
+  margin-bottom: 19px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: 1px;
+  color: #0067f4;
+}
+
+.subtitle {
+  color: #202224;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0px;
+}
+.icons {
+  font-size: 32px;
+}
