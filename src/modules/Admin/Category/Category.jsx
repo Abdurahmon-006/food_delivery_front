@@ -33,7 +33,7 @@ export const Category = () => {
     <>
       <Box margin="68px 0">
         <Header
-          title="Ishchilar"
+          title="Category"
           onOpen={onOpen}
           isOpen={isOpen}
           onClose={onClose}
