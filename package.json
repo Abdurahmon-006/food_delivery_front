@@ -1,5 +1,5 @@
 {
-  "name": "LMS",
+  "name": "Food Deliverty",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -39,8 +39,6 @@
     "react-paginate": "^8.2.0",
     "react-query": "^3.39.3",
     "react-router-dom": "^6.21.3",
-    "react-smooth": "^4.0.0",
-    "react-smooth-dnd": "^0.11.1",
     "react-tabs": "^6.0.2",
     "sass": "^1.70.0",
     "styled-components": "^6.1.8",
