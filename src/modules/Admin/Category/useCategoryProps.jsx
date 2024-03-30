@@ -115,17 +115,17 @@ export const useCategoryProps = () => {
 
   const columns = [
     { title: '№', dataIndex: 'number', key: 'number', width: 88 },
-    { title: 'Uzb', dataIndex: 'name_uz', key: 'name_uz', width: 420 },
-    { title: 'Russ', dataIndex: 'name_ru', key: 'name_ru', width: 410 },
+    { title: 'Название Уз', dataIndex: 'name_uz', key: 'name_uz', width: 420 },
+    { title: 'Название Ру', dataIndex: 'name_ru', key: 'name_ru', width: 410 },
     {
-      title: 'Endlish',
+      title: 'Название Анг',
       dataIndex: 'name_en',
       key: 'name_en',
       width: 200,
     },
 
     {
-      title: 'Статnumberус',
+      title: 'Под категория',
       key: 'number',
       dataIndex: 'number',
       width: 360,
