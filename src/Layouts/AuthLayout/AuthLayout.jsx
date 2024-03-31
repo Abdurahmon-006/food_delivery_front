@@ -8,7 +8,7 @@ export const AuthLayout = () => {
     <>
       <Box className={cls.wrapper}>
         <Box className={cls.wrapperLeft}>
-          <h2 className={cls.title}>Food Delevery</h2>
+          <h2 className={cls.title}>Food Delever</h2>
         </Box>
         <Box className={cls.wrapperContent}>
           <Outlet />

@@ -30,7 +30,6 @@ export const useLoginProps = () => {
       onError: (error) => {
         setError('email', { message: error?.response?.data });
         setError('password', { message: error?.response?.data });
-        console.log('helloo');
       },
     });
   };

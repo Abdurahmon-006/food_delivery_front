@@ -6,12 +6,12 @@ import { Container } from 'components/Container';
 export const MainLayout = () => {
   return (
     <>
-      <Flex minHeight="100vh">
+      <Box className={cls.content}>
         <Sidebar />
         <Box className={cls.wrapper} id="outlet">
           <Outlet className={cls.outlet} />
         </Box>
-      </Flex>
+      </Box>
     </>
   );
 };

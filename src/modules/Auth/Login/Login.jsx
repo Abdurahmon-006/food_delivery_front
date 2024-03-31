@@ -9,7 +9,7 @@ import { CheckInput } from '../components/CheckInput';
 import { CopyRight } from '../components/CopyRight';
 import { AuthInputPassword } from '../components/AuthInputPassword';
 import { AuthInput } from '../components/AuthInput';
-
+import { IoCall } from 'react-icons/io5';
 export const Login = () => {
   const {
     onSubmit,
@@ -21,10 +21,11 @@ export const Login = () => {
 
   return (
     <Box>
-      <h1 className={cls.title}>Вход в платформу</h1>
+      <h1 className={cls.title}>Войти в систему </h1>
       <FormControl onSubmit={handleSubmit(onSubmit)} as="form">
         <AuthInput
-          label="Email"
+          label="Имя пользователя
+          "
           id="email"
           type="email"
           placeholder="Введите e-mail"
@@ -54,10 +55,14 @@ export const Login = () => {
           <Link className={cls.restorePassword} to="/auth/resetPassword">Забыли пароль?</Link>
         </Box> */}
         <Box className={cls.btnWrapper}>
-          <BtnSubmit height="60px" text="Войти в аккаунт" isPending={isPending} />
+          <BtnSubmit height="50px" text="Войти" isPending={isPending} />
         </Box>
         <CopyRight />
       </FormControl>
+      <Box className={cls.text}>
+        <IoCall />
+        <p>Служба поддержки +998 (90) 910-72-20</p>
+      </Box>
     </Box>
   );
 };
