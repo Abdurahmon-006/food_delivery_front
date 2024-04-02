@@ -30,14 +30,19 @@ export const Sidebar = ({ openNav, closeNav }) => {
   };
 
   const links = [
-    { title: 'Dashboard', path: 'admin/dashbord', icon: <FiBarChart2 /> },
-    { title: 'Shopping', path: 'admin/courses', icon: <FiShoppingCart /> },
-    { title: 'Users', path: 'admin/groups', icon: <TbUsers /> },
-    { title: 'Workers', path: 'admin/students', icon: <MdGroups /> },
-    { title: 'Categories', path: 'admin/category', icon: <MdRestaurant /> },
-    { title: 'Locations', path: 'admin/location', icon: <MdMyLocation /> },
-    { title: 'Calendar', path: 'admin/calendar', icon: <MdEditCalendar /> },
+    { path: 'admin/dashbord', icon: <FiBarChart2 /> },
+    { path: 'admin/courses', icon: <FiShoppingCart /> },
+    { path: 'admin/groups', icon: <TbUsers /> },
+    { path: 'admin/students', icon: <MdGroups /> },
+    { path: 'admin/category', icon: <MdRestaurant /> },
+    { path: 'admin/location', icon: <MdMyLocation /> },
+    { path: 'admin/calendar', icon: <MdEditCalendar /> },
   ];
+  const adminLinks = [
+    { path: 'admin/category', title: 'Категория' },
+    { path: 'admin/profile', title: 'Профил' },
+  ];
+
   return (
     <Box className={cls.sidebar} style={{ width: isOpen ? '280px' : '88px' }}>
       {/* Sidebar content */}
@@ -47,7 +52,7 @@ export const Sidebar = ({ openNav, closeNav }) => {
 
       <Box className={cls.toggleButton} onClick={handleToggleSidebar}>
         {isOpen ? (
-          <button variant="ghost">
+          <button className={cls.chevronR} variant="ghost">
             <FiChevronsLeft />
           </button>
         ) : (
@@ -56,23 +61,34 @@ export const Sidebar = ({ openNav, closeNav }) => {
           </button>
         )}
       </Box>
-      <nav className={cls.navbar}>
-        <ul className={cls.navList}>
-          {links.map((link, index) => (
-            <li className={cls.navItem} key={index}>
-              <Link to={link.path} className={`${cls.navLink} ${pathname.includes(link.path) ? cls.active : ''}`}>
-                <p>{link.title}</p>
-                {link.icon}
-              </Link>
+
+      <Box className={cls.wrapperSidebar}>
+        <nav className={cls.navbar}>
+          <ul className={cls.navList}>
+            {links.map((link, index) => (
+              <li className={cls.navItem} key={index}>
+                <Link to={link.path} className={`${cls.navLink} ${pathname.includes(link.path) ? cls.active : ''}`}>
+                  <p> {link.icon}</p>
+                </Link>
+              </li>
+            ))}
+            <li className={cls.navItem}>
+              <button className={cls.navLink} onClick={handleLogOut}>
+                <p>
+                  <CiLogout className={cls.logOutIcon} />
+                </p>
+              </button>
             </li>
+          </ul>
+        </nav>
+        <Box className={cls.CategoryLinks}>
+          {adminLinks.map((link, index) => (
+            <Link to={link.path} className={`${cls.navLink} ${pathname.includes(link.path) ? cls.active : ''}`}>
+              <p> {link.title}</p>
+            </Link>
           ))}
-          <li className={cls.navItem}>
-            <button className={cls.navLink} onClick={handleLogOut}>
-              <CiLogout className={cls.logOutIcon} />
-            </button>
-          </li>
-        </ul>
-      </nav>
+        </Box>
+      </Box>
     </Box>
   );
 };
