@@ -22,6 +22,7 @@ import { ProfileDetail } from 'modules/Admin/Profile/Components/ProfileDetail';
 import { Category } from 'modules/Admin/Category';
 import { Location } from 'modules/Admin/Location/Location';
 import { Calendar } from 'modules/Admin/Calendar/Calendar';
+import { CategoryDetail } from 'modules/Admin/Category/Components/CategoryDetail/CategoryDetail';
 
 export const Router = observer(() => {
   const isAuth = authStore.isAuth;
@@ -55,6 +56,7 @@ export const Router = observer(() => {
         <Route path="/admin/mentors" element={<Mentors />} />
         <Route path="/admin/category" element={<Category />} />
         <Route path="/admin/location" element={<Location />} />
+        <Route path="/admin/categorydetail" element={<CategoryDetail />} />
         <Route path="/admin/calendar" element={<Calendar />} />
         <Route path="/admin/payments" element={<Payments />} />
         <Route path="/admin/reports" element={<Reports />} />

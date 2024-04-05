@@ -8,7 +8,7 @@ export const MainLayout = () => {
     <>
       <Box className={cls.content}>
         <Sidebar />
-        <Box className={cls.wrapper} id="outlet">
+        <Box marginLeft={'280px'} className={cls.wrapper} id="outlet">
           <Outlet className={cls.outlet} />
         </Box>
       </Box>

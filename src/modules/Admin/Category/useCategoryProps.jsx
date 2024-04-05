@@ -8,7 +8,10 @@ import request from 'services/httpRequest';
 import EyeView from 'assets/img/icon/EyeView.svg';
 import { useDeleteUserById, useGetMentors, useGetUserById, useUpdateUserById } from 'services/users.service';
 import { useGetCategories } from 'services/category.service';
+// import { AiOutlineMore } from 'react-icons/ai';
 
+import { AiOutlineEllipsis } from 'react-icons/ai';
+// import { AiOutlineEllipsis } from 'react-icons/ai';
 export const useCategoryProps = () => {
   // const [activeGroup, setActiveGroup] = useState('');
   // const [activeGroupId, setActiveGroupId] = useState('');
@@ -114,23 +117,31 @@ export const useCategoryProps = () => {
   // };
 
   const columns = [
-    { title: '№', dataIndex: 'number', key: 'number', width: 88 },
-    { title: 'Название Уз', dataIndex: 'name_uz', key: 'name_uz', width: 420 },
-    { title: 'Название Ру', dataIndex: 'name_ru', key: 'name_ru', width: 410 },
     {
-      title: 'Название Анг',
-      dataIndex: 'name_en',
-      key: 'name_en',
-      width: 200,
-    },
-
-    {
-      title: 'Под категория',
+      title: 'No',
       key: 'number',
       dataIndex: 'number',
-      width: 360,
+      width: 0,
     },
-
+    {
+      title: 'Название еда',
+      dataIndex: 'name_en',
+      key: 'name_en',
+      width: 800,
+    },
+    {
+      title: ' дата начала',
+      dataIndex: 'data',
+      key: 'data',
+      width: 1000,
+      render: (item) => {
+        return (
+          <div>
+            <p>22.03.2023</p>
+          </div>
+        );
+      },
+    },
     {
       title: '',
       key: 'operations',
@@ -138,14 +149,16 @@ export const useCategoryProps = () => {
         return (
           <div>
             <Button
-              padding="4px"
+              border={'1px solid #7384a2'}
+              boxShadow={'0px 1px 2px rgba(16, 24, 40, 0.05)'}
+              padding="10px"
               colorScheme="transparent"
               onClick={() => {
                 onOpenE();
                 setActiveGroupId(item?.id);
               }}
             >
-              <img src={Edit} width={20} height={20} alt="edit" />
+              <AiOutlineEllipsis color="#0e73fc" />
             </Button>
             {/* <Button
               padding="4px"
