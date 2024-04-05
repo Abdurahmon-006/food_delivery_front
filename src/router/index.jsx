@@ -11,7 +11,6 @@ import { ResetPassword } from 'modules/Auth/ResetPassword';
 import { ResetPasswordStep2 } from 'modules/Auth/ResetPassword/Components/ResetPasswordStep2';
 import { ResetPasswordStep3 } from 'modules/Auth/ResetPassword/Components/ResetPasswordStep3';
 import { Dashbord } from 'modules/Admin/Dashbord';
-import { Courses } from 'modules/Admin/Courses';
 import { Groups } from 'modules/Admin/Groups';
 import { Students } from 'modules/Admin/Students';
 import { Mentors } from 'modules/Admin/Mentors';
@@ -23,6 +22,7 @@ import { Category } from 'modules/Admin/Category';
 import { Location } from 'modules/Admin/Location/Location';
 import { Calendar } from 'modules/Admin/Calendar/Calendar';
 import { CategoryDetail } from 'modules/Admin/Category/Components/CategoryDetail/CategoryDetail';
+import { Shopping } from 'modules/Admin/Courses';
 
 export const Router = observer(() => {
   const isAuth = authStore.isAuth;
@@ -50,7 +50,7 @@ export const Router = observer(() => {
     <Routes>
       <Route path="" element={<MainLayout />}>
         <Route path="/admin/dashbord" element={<Dashbord />} />
-        <Route path="/admin/courses" element={<Courses />} />
+        <Route path="/admin/shopping" element={<Shopping />} />
         <Route path="/admin/groups" element={<Groups />} />
         <Route path="/admin/students" element={<Students />} />
         <Route path="/admin/mentors" element={<Mentors />} />

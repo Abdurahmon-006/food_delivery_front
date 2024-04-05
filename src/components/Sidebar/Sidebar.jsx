@@ -46,7 +46,7 @@ export const Sidebar = ({ openNav, closeNav }) => {
 
   const links = [
     { path: 'admin/dashboard', icon: <FiBarChart2 /> },
-    { path: 'admin/courses', icon: <FiShoppingCart /> },
+    { path: 'admin/shopping', icon: <FiShoppingCart /> },
     { path: 'admin/groups', icon: <TbUsers /> },
     { path: 'admin/students', icon: <MdGroups /> },
     { path: 'admin/category', icon: <MdRestaurant /> },
@@ -54,9 +54,8 @@ export const Sidebar = ({ openNav, closeNav }) => {
     { path: 'admin/calendar', icon: <MdEditCalendar /> },
   ];
   const adminLinks = [
-    { path: 'admin/category', title: 'Категория' },
-    { path: 'admin/profile', title: 'Профил' },
-    { path: 'admin/calendar', title: 'Календар' },
+    { path: 'admin/category', title: 'Категории' },
+    { path: 'admin/shopping', title: 'Магазин' },
   ];
 
   return (
@@ -91,17 +90,15 @@ export const Sidebar = ({ openNav, closeNav }) => {
                 </Link>
               </li>
             ))}
-          </ul>
-          <ul className={cls.setting}>
-            <li className={cls.navItem}>
+            <li className={cls.logOutIconWrapper}>
               <button className={cls.navLink} onClick={handleLogOut}>
                 <p>
                   <CiLogout className={cls.logOutIcon} />
                 </p>
               </button>
             </li>
-            <li className={cls.navItem}>
-              <button className={cls.navLink} onClick={handleLogOut}>
+            <li className={cls.SettingIconWrapper}>
+              <button className={cls.navLink}>
                 <p>
                   <SettingsIcon className={cls.logOutIcon} />
                 </p>
@@ -114,7 +111,7 @@ export const Sidebar = ({ openNav, closeNav }) => {
             {adminLinks.map((link, index) => (
               <Link
                 to={link.path}
-                className={`${cls.navLink} ${pathname.includes(link.path) ? cls.active : ''}`}
+                className={`${cls.SecondarynavLink} ${pathname.includes(link.path) ? cls.active : ''}`}
                 onClick={() => handleLinkClick(link.path)}
                 key={index}
               >

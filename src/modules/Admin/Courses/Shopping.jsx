@@ -6,10 +6,10 @@ import { AddModal } from 'components/AddModal';
 import { Header } from 'components/Header';
 import { CoursesInput } from './Components/CoursesInput';
 import DownloadIcon from 'assets/img/icon/download.svg';
-import { useCoursesProps } from './useCoursesProps';
+import { useShoppingProps } from './useShoppingProps';
 import FileUploadComponent from 'components/UploadFile/UploadFile';
 
-export const Courses = () => {
+export const Shopping = () => {
   const {
     register,
     categories,
@@ -26,7 +26,7 @@ export const Courses = () => {
     handleSubmit,
     onSubmit,
     onChange,
-  } = useCoursesProps();
+  } = useShoppingProps();
 
   return (
     <Box className={cls.content}>

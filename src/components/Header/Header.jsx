@@ -1,31 +1,31 @@
 import { Box } from '@chakra-ui/react';
 import cls from './styles.module.scss';
-import { SearchInput } from 'components/SearchInput';
-import { BtnSubmit } from 'components/BtnSubmit';
-import { Filter } from 'components/Filter';
-import { BtnDownload } from 'components/BtnDownload';
 import { AddModal } from 'components/AddModal';
 import { Link } from 'react-router-dom';
-
+import { Button, ButtonGroup } from '@chakra-ui/react';
 export const Header = ({
   onOpen = () => {},
   isOpen,
   register = () => {},
   title,
   onClose = () => {},
-  onChange = () => {},
   handleAccept = () => {},
 }) => {
   return (
     <header id="header" className={cls.header}>
       <Box className={cls.wrapper}>
         <h1 className={cls.title}>{title}</h1>
-        <Box className={cls.wrapperLeft}>
-          <BtnDownload />
-          <SearchInput onChange={onChange} className={cls.searchInput} />
-          <Filter />
+        <Box gap={10} className={cls.wrapperLeft}>
+          <Link to={'/admin/category'}>
+            <Button border={'1px solid #E5E9EB'} background={'transparent'} color={'red'}>
+              - Отменить
+            </Button>
+          </Link>
           <Link to={'/admin/categorydetail'} onClick={onOpen}>
-            <BtnSubmit className={cls.btnAdd} text="+ Добавить" />
+            <Button background={'blue'} color={'white'}>
+              {' '}
+              + Добавить
+            </Button>
           </Link>
         </Box>
       </Box>

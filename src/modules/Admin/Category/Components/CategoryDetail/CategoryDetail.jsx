@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Box, Button, FormControl, FormLabel, Input } from '@chakra-ui/react';
+import { Box, Button, FormControl, Input } from '@chakra-ui/react';
 import cls from './style.module.scss';
 import { Header } from 'components/Header';
-export const CategoryDetail = () => {
+
+export const CategoryDetail = ({ title }) => {
   const [image, setImage] = useState(null);
 
   const handleImageChange = (e) => {
@@ -13,43 +14,43 @@ export const CategoryDetail = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Image:', image);
-    // You can add code here to handle the form submission, such as sending the data to a server
   };
 
   return (
-    <div>
-      <Header title={'Общие сведения'} />
-      <div className={cls.wrapper}>
-        <form onSubmit={handleSubmit}>
-          <FormLabel>Общие сведения:</FormLabel>
-          <FormLabel>Name:</FormLabel>
-          <Input type="text" marginBottom={5} accept="image/*" onChange={handleImageChange} />
-          <input
-            id="imageInput"
-            type="file"
-            accept="image/*"
-            onChange={handleImageChange}
-            style={{ display: 'none' }} // Hide the default file input
-          />
+    <div className={cls.categoryDetail}>
+      <Header title={title} />
+      <Box padding={20} className={cls.Allwrapper}>
+        <div className={cls.wrapper}>
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="nameInput">Name:</label>
+            <Input id="nameInput" type="text" marginBottom={5} accept="image/*" onChange={handleImageChange} />
+            <input
+              id="imageInput"
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+              style={{ display: 'none' }} // Hide the default file input
+            />
 
-          <Box className={cls.formControl}>
-            <Button
-              as="label"
-              htmlFor="imageInput"
-              widtFormControlh={150}
-              height={150}
-              background="white"
-              border={'1px solid black'}
-              cursor="pointer"
-            >
-              Макс размер 4 МБ
-            </Button>
-            <Button className={cls.btn} type="submit" colorScheme="blue">
-              Submit
-            </Button>
-          </Box>
-        </form>
-      </div>
+            <Box className={cls.formControl}>
+              <Button
+                as="label"
+                htmlFor="imageInput"
+                width={150}
+                height={150}
+                background="white"
+                border={'1px solid black'}
+                cursor="pointer"
+              >
+                Макс размер 4 МБ
+              </Button>
+              <Button className={cls.btn} type="submit" colorScheme="blue">
+                Submit
+              </Button>
+            </Box>
+          </form>
+        </div>
+      </Box>
     </div>
   );
 };

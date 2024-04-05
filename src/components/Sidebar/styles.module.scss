@@ -135,7 +135,44 @@
     width: 200px;
   }
 }
+.CategoryLinks {
+  color: #fff;
+  font-size: 17px;
+  padding-left: 16px;
+}
 .setting {
   margin-top: 250px;
   margin-left: 10px;
+}
+.logOutIconWrapper {
+  margin-bottom: 12px;
+  margin-top: 270px;
+  width: 60px;
+}
+.SettingIconWrapper {
+  margin-bottom: 12px;
+  width: 60px;
+}
+
+.SecondarynavLink {
+  width: 150px;
+  justify-content: center;
+  display: flex;
+  text-decoration: none;
+  color: #6b7280;
+  padding: 8px;
+  border-radius: 6px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  &.active {
+    background-color: #8c8bdd;
+    color: #fff;
+  }
+
+  svg {
+    font-size: 24px;
+    margin-right: 8px; // Adjust spacing between icon and text as needed
+  }
 }

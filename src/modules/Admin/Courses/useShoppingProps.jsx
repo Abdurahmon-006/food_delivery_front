@@ -7,7 +7,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useGetCategories } from 'services/category.service';
 import { EditIcon } from '@chakra-ui/icons';
 
-export const useCoursesProps = () => {
+export const useShoppingProps = () => {
   const toast = useToast();
   const { register, handleSubmit, reset } = useForm();
   const navigate = useNavigate();
