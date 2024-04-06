@@ -10,24 +10,37 @@
   max-width: 1000px; /* Use max-width instead of width for responsiveness */
 }
 
+.title {
+  color: black;
+  display: flex;
+  align-items: start;
+  margin-bottom: 10px;
+  font-size: 19px;
+}
 .wrapper {
   border-radius: 10px;
   width: 100%;
   padding: 20px;
-  display: flex;
   align-items: center;
   text-align: center;
   background-color: #fff;
 }
+.form {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
 
 .btn {
-  margin-top: 20px;
-  width: 70%;
+  margin-top: 130px;
+  margin-left: 50px;
+  width: 170px;
   height: 40px;
   background-color: #0067f4;
   border-radius: 8px;
   color: white;
   border: none; /* Ensure no border for consistency */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .btn:hover {

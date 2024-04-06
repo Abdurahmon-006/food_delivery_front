@@ -18,12 +18,35 @@ export const CategoryDetail = ({ title }) => {
 
   return (
     <div className={cls.categoryDetail}>
-      <Header title={title} />
+      <Header title={'Общие сведения'} />
       <Box padding={20} className={cls.Allwrapper}>
         <div className={cls.wrapper}>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="nameInput">Name:</label>
-            <Input id="nameInput" type="text" marginBottom={5} accept="image/*" onChange={handleImageChange} />
+          <p className={cls.title}>Общие настройки</p>
+          <hr />
+          <form className={cls.form} onSubmit={handleSubmit}>
+            <Button
+              as="label"
+              htmlFor="imageInput"
+              width={150}
+              height={150}
+              background="white"
+              border={'1px solid black'}
+              cursor="pointer"
+            >
+              Макс размер 4 МБ
+            </Button>
+            <Box display={'flex'} flexDirection={'column'} alignItems={'start'}>
+              <label htmlFor="nameInput">Название</label>
+              <Input
+                width={300}
+                id="nameInput"
+                type="text"
+                marginBottom={5}
+                accept="image/*"
+                onChange={handleImageChange}
+              />
+            </Box>
+
             <input
               id="imageInput"
               type="file"
@@ -32,22 +55,9 @@ export const CategoryDetail = ({ title }) => {
               style={{ display: 'none' }} // Hide the default file input
             />
 
-            <Box className={cls.formControl}>
-              <Button
-                as="label"
-                htmlFor="imageInput"
-                width={150}
-                height={150}
-                background="white"
-                border={'1px solid black'}
-                cursor="pointer"
-              >
-                Макс размер 4 МБ
-              </Button>
-              <Button className={cls.btn} type="submit" colorScheme="blue">
-                Submit
-              </Button>
-            </Box>
+            <Button className={cls.btn} type="submit" colorScheme="blue">
+              Submit
+            </Button>
           </form>
         </div>
       </Box>

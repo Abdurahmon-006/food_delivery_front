@@ -23,7 +23,6 @@ export const Header = ({
           </Link>
           <Link to={'/admin/categorydetail'} onClick={onOpen}>
             <Button background={'blue'} color={'white'}>
-              {' '}
               + Добавить
             </Button>
           </Link>
